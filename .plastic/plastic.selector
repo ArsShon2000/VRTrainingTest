@@ -1,0 +1,4 @@
+repository "VRTrainingTest 2026-09-09_21-32-35/VRTrainingTest@18968496565786@cloud"
+  path "/"
+    br "/main"
+    co "/main"
