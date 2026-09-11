@@ -18,6 +18,7 @@ namespace VRTrainingTest.Training
 
         private void Awake()
         {
+            // Сценарий собирается в коде, чтобы все шаги были видны в одном месте  
             BuildScenario();
             CreateAudioClipsIfNeeded();
         }
@@ -32,6 +33,7 @@ namespace VRTrainingTest.Training
             if (groups.Count == 0)
                 return;
 
+            // Любой интерактивный объект приходит сюда одним общим сообщением
             var currentStep = CurrentStep;
 
             if (IsExpectedAction(currentStep, action))
@@ -53,6 +55,7 @@ namespace VRTrainingTest.Training
         {
             groups.Clear();
 
+            // Три группы по три шага
             groups.Add(new TrainingStepGroup(
                 "Проверка документов",
                 new List<TrainingStep>
@@ -101,6 +104,7 @@ namespace VRTrainingTest.Training
         {
             var steps = groups[currentGroupIndex].Steps;
 
+            // Если игрок сделал будущий шаг раньше времени, считаем это нарушением порядка 
             for (var index = currentStepIndex + 1; index < steps.Count; index++)
             {
                 if (IsExpectedAction(steps[index], action))
@@ -140,6 +144,7 @@ namespace VRTrainingTest.Training
 
             CurrentStep.Status = TrainingStepStatus.Failed;
 
+            // Остаток группы уже нельзя пройти честно, поэтому помечаем его как пропущенный 
             var steps = groups[currentGroupIndex].Steps;
             for (var index = currentStepIndex + 1; index < steps.Count; index++)
             {
@@ -184,6 +189,7 @@ namespace VRTrainingTest.Training
 
             Debug.Log("[Training] Сценарий завершён.");
 
+            // Дублируем итог в Console, чтобы было удобно проверять без UI
             foreach (var group in groups)
             {
                 Debug.Log($"[Training] Итог группы: {group.Name}");
@@ -217,6 +223,7 @@ namespace VRTrainingTest.Training
 
         private void CreateAudioClipsIfNeeded()
         {
+            // Если аудиоклипы не заданы в инспекторе, создаем простые короткие сигналы кодом  
             if (successClip == null)
             {
                 successClip = CreateToneClip("Training Success", 880f, 0.12f, 0.35f);

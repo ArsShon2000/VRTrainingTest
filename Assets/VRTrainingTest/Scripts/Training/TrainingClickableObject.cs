@@ -15,6 +15,7 @@ namespace VRTrainingTest.Training
 
         private void Awake()
         {
+            // XRSimpleInteractable дает объекту обычный клик через XR-луч
             interactable = GetComponent<XRSimpleInteractable>();
             interactable.selectEntered.AddListener(OnSelected);
         }
@@ -32,6 +33,7 @@ namespace VRTrainingTest.Training
             if (isTriggered || scenarioController == null)
                 return;
 
+            // Считаем действие один раз, чтобы повторный клик не ломал шаги
             isTriggered = true;
             scenarioController.RegisterAction(new TrainingAction(TrainingActionType.ClickObject, targetId));
         }

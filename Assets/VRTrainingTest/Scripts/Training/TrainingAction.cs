@@ -1,5 +1,6 @@
 namespace VRTrainingTest.Training
 {
+    // Короткое сообщение от объекта сценария: что игрок сделал и с чем
     public readonly struct TrainingAction
     {
         public readonly TrainingActionType Type;

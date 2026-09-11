@@ -14,6 +14,7 @@ namespace VRTrainingTest.Training
 
         private void Awake()
         {
+            // Ищем XR Origin, потому что игрок двигается через XR-риг, а не через обычный контроллер
             xrOrigin = FindAnyObjectByType<XROrigin>();
         }
 
@@ -25,12 +26,14 @@ namespace VRTrainingTest.Training
             var userPosition = xrOrigin.Camera.transform.position;
             var zonePosition = transform.position;
 
+            // Высоту не учитываем, иначе камера и плоская зона дают лишнюю разницу 
             userPosition.y = 0f;
             zonePosition.y = 0f;
 
             if (Vector3.Distance(userPosition, zonePosition) > activationDistance)
                 return;
 
+            // После входа в зону шаг больше не срабатывает повторно  
             isTriggered = true;
             scenarioController.RegisterAction(new TrainingAction(TrainingActionType.ReachPoint, targetId));
         }

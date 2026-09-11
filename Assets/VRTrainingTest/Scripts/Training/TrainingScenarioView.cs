@@ -16,8 +16,21 @@ namespace VRTrainingTest.Training
         [SerializeField] private GameObject restartButton;
         [SerializeField] private GameObject returnLobbyButton;
 
+        [SerializeField] private TrainingHighlight documentZoneHighlight;
+        [SerializeField] private TrainingHighlight passportHighlight;
+        [SerializeField] private TrainingHighlight confirmDocumentsButtonHighlight;
+
+        [SerializeField] private TrainingHighlight equipmentZoneHighlight;
+        [SerializeField] private TrainingHighlight brokenDeviceHighlight;
+        [SerializeField] private TrainingHighlight confirmViolationButtonHighlight;
+
+        [SerializeField] private TrainingHighlight finishZoneHighlight;
+        [SerializeField] private TrainingHighlight finalReportHighlight;
+        [SerializeField] private TrainingHighlight finishTrainingButtonHighlight;
+
         public void ShowStep(TrainingStep step, string groupName)
         {
+            // Каждый новый шаг заново выставляет текст, кнопки и подсветку
             SetLabelActive(groupLabel, true);
             SetLabelActive(stepLabel, true);
             SetLabelActive(resultsLabel, false);
@@ -34,11 +47,13 @@ namespace VRTrainingTest.Training
 
             SetButtonActive(restartButton, false);
             SetButtonActive(returnLobbyButton, false);
-            UpdateButtons(step);
+            UpdateButtons(step); 
+            UpdateHighlights(step);
         }
 
         public void ShowCompleted(IReadOnlyList<TrainingStepGroup> groups)
         {
+            // На финальном экране шагов уже нет, показываем только итог и кнопки действий
             SetLabelActive(groupLabel, true);
             SetLabelActive(stepLabel, false);
             SetLabelActive(resultsLabel, true);
@@ -58,12 +73,14 @@ namespace VRTrainingTest.Training
             SetButtonActive(finishTrainingButton, false);
             SetButtonActive(restartButton, true);
             SetButtonActive(returnLobbyButton, true);
+            ClearHighlights();
         }
 
         private static string BuildResultsText(IReadOnlyList<TrainingStepGroup> groups)
         {
             var builder = new StringBuilder();
 
+            // Собираем обычный текст, так его проще вывести в один TMP label
             foreach (var group in groups)
             {
                 builder.AppendLine(group.Name);
@@ -81,6 +98,7 @@ namespace VRTrainingTest.Training
 
         private void UpdateButtons(TrainingStep step)
         {
+            // Показываем только ту кнопку, которая реально нужна на текущем шаге
             SetButtonActive(
                 confirmDocumentsButton,
                 step.ExpectedActionType == TrainingActionType.PressUIButton &&
@@ -121,6 +139,47 @@ namespace VRTrainingTest.Training
             if (label != null)
             {
                 label.gameObject.SetActive(isActive);
+            }
+        }
+
+        private void UpdateHighlights(TrainingStep step)
+        {
+            ClearHighlights();
+
+            // TargetId связывает шаг сценария с конкретным объектом на сцене
+            SetHighlight(documentZoneHighlight, step.TargetId == "DocumentZone");
+            SetHighlight(passportHighlight, step.TargetId == "Passport");
+            SetHighlight(confirmDocumentsButtonHighlight, step.TargetId == "ConfirmDocumentsButton");
+
+            SetHighlight(equipmentZoneHighlight, step.TargetId == "EquipmentZone");
+            SetHighlight(brokenDeviceHighlight, step.TargetId == "BrokenDevice");
+            SetHighlight(confirmViolationButtonHighlight, step.TargetId == "ConfirmViolationButton");
+
+            SetHighlight(finishZoneHighlight, step.TargetId == "FinishZone");
+            SetHighlight(finalReportHighlight, step.TargetId == "FinalReport");
+            SetHighlight(finishTrainingButtonHighlight, step.TargetId == "FinishTrainingButton");
+        }
+
+        private void ClearHighlights()
+        {
+            SetHighlight(documentZoneHighlight, false);
+            SetHighlight(passportHighlight, false);
+            SetHighlight(confirmDocumentsButtonHighlight, false);
+
+            SetHighlight(equipmentZoneHighlight, false);
+            SetHighlight(brokenDeviceHighlight, false);
+            SetHighlight(confirmViolationButtonHighlight, false);
+
+            SetHighlight(finishZoneHighlight, false);
+            SetHighlight(finalReportHighlight, false);
+            SetHighlight(finishTrainingButtonHighlight, false);
+        }
+
+        private static void SetHighlight(TrainingHighlight highlight, bool isHighlighted)
+        {
+            if (highlight != null)
+            {
+                highlight.SetHighlighted(isHighlighted);
             }
         }
     }

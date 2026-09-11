@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 951674026}
   - component: {fileID: 951674025}
   - component: {fileID: 951674024}
+  - component: {fileID: 951674031}
   m_Layer: 0
   m_Name: FinalReport
   m_TagString: Untagged
@@ -2123,6 +2124,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &951674031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951674023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &993276824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,6 +2291,7 @@ GameObject:
   - component: {fileID: 1005998765}
   - component: {fileID: 1005998764}
   - component: {fileID: 1005998767}
+  - component: {fileID: 1005998768}
   m_Layer: 5
   m_Name: ConfirmDocumentsButton
   m_TagString: Untagged
@@ -2408,6 +2427,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingUIButton
   scenarioController: {fileID: 924373646}
   targetId: ConfirmDocumentsButton
+--- !u!114 &1005998768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005998762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &1078032478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,6 +2594,7 @@ GameObject:
   - component: {fileID: 1093069221}
   - component: {fileID: 1093069220}
   - component: {fileID: 1093069219}
+  - component: {fileID: 1093069223}
   m_Layer: 5
   m_Name: FinishTrainingButton
   m_TagString: Untagged
@@ -2693,6 +2730,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093069217}
   m_CullTransparentMesh: 1
+--- !u!114 &1093069223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093069217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &1214031629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,6 +2897,7 @@ GameObject:
   - component: {fileID: 1240432982}
   - component: {fileID: 1240432981}
   - component: {fileID: 1240432980}
+  - component: {fileID: 1240432985}
   m_Layer: 0
   m_Name: EquipmentZone
   m_TagString: Untagged
@@ -2958,6 +3013,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240432985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240432979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1001 &1372577500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3276,6 +3348,15 @@ MonoBehaviour:
   finishTrainingButton: {fileID: 1093069217}
   restartButton: {fileID: 206577005}
   returnLobbyButton: {fileID: 384443398}
+  documentZoneHighlight: {fileID: 1520386275}
+  passportHighlight: {fileID: 1758712805}
+  confirmDocumentsButtonHighlight: {fileID: 1005998768}
+  equipmentZoneHighlight: {fileID: 1240432985}
+  brokenDeviceHighlight: {fileID: 1720099853}
+  confirmViolationButtonHighlight: {fileID: 1827856777}
+  finishZoneHighlight: {fileID: 1762353205}
+  finalReportHighlight: {fileID: 951674031}
+  finishTrainingButtonHighlight: {fileID: 1093069223}
 --- !u!114 &1459288591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3760,6 +3841,7 @@ GameObject:
   - component: {fileID: 1520386271}
   - component: {fileID: 1520386270}
   - component: {fileID: 1520386274}
+  - component: {fileID: 1520386275}
   m_Layer: 0
   m_Name: DocumentZone
   m_TagString: Untagged
@@ -3875,6 +3957,23 @@ MonoBehaviour:
   scenarioController: {fileID: 924373646}
   targetId: DocumentZone
   activationDistance: 1.2
+--- !u!114 &1520386275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520386269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 0.6431373}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &1530948126
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,6 +4262,7 @@ GameObject:
   - component: {fileID: 1720099847}
   - component: {fileID: 1720099852}
   - component: {fileID: 1720099851}
+  - component: {fileID: 1720099853}
   m_Layer: 0
   m_Name: BrokenDevice
   m_TagString: Untagged
@@ -4352,6 +4452,23 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+--- !u!114 &1720099853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720099846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &1758712796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,6 +4484,7 @@ GameObject:
   - component: {fileID: 1758712803}
   - component: {fileID: 1758712802}
   - component: {fileID: 1758712804}
+  - component: {fileID: 1758712805}
   m_Layer: 0
   m_Name: Passport
   m_TagString: Untagged
@@ -4639,6 +4757,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingGrabObject
   scenarioController: {fileID: 924373646}
   targetId: Passport
+--- !u!114 &1758712805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758712796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &1762353199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,6 +4787,7 @@ GameObject:
   - component: {fileID: 1762353202}
   - component: {fileID: 1762353201}
   - component: {fileID: 1762353200}
+  - component: {fileID: 1762353205}
   m_Layer: 0
   m_Name: FinishZone
   m_TagString: Untagged
@@ -4767,6 +4903,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762353205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762353199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1 &1827856771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,6 +4933,7 @@ GameObject:
   - component: {fileID: 1827856775}
   - component: {fileID: 1827856774}
   - component: {fileID: 1827856773}
+  - component: {fileID: 1827856777}
   m_Layer: 5
   m_Name: ConfirmViolationButton
   m_TagString: Untagged
@@ -4915,6 +5069,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827856771}
   m_CullTransparentMesh: 1
+--- !u!114 &1827856777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827856771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dcc90c23f0c8d4e81a3aad2d61d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRTrainingTest.Training.TrainingHighlight
+  renderers: []
+  graphics: []
+  highlightColor: {r: 0.4, g: 0.30588236, b: 0.9529412, a: 1}
+  blinkSpeed: 2
+  highlightStrength: 0.35
 --- !u!1001 &2000912122
 PrefabInstance:
   m_ObjectHideFlags: 0

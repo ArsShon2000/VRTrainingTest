@@ -3,6 +3,7 @@ using System;
 namespace VRTrainingTest.Training
 {
     [Serializable]
+    // Один пункт сценария: что показать игроку и какое действие ждатб
     public sealed class TrainingStep
     {
         public int Id;

@@ -14,6 +14,7 @@ namespace VRTrainingTest.Training
 
         private void Awake()
         {
+            // Берем базовый interactable, так скрипт работает с разными grab-компонентами XR Toolkit
             interactable = GetComponent<XRBaseInteractable>();
 
             if (interactable != null)
@@ -35,6 +36,7 @@ namespace VRTrainingTest.Training
             if (isTriggered || scenarioController == null)
                 return;
 
+            // Для сценария важно именно первое взятие предмета
             isTriggered = true;
             scenarioController.RegisterAction(new TrainingAction(TrainingActionType.GrabObject, targetId));
         }

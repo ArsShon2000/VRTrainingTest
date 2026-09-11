@@ -7,6 +7,7 @@ namespace VRTrainingTest.UI
     {
         [SerializeField] private string sceneName;
 
+        // Вызывается с UI-кнопки в лобби и открывает нужную сцену 
         public void LoadConfiguredScene()
         {
             if (string.IsNullOrWhiteSpace(sceneName))

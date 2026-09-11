@@ -7,6 +7,7 @@ namespace VRTrainingTest.Training
         [SerializeField] private TrainingScenarioController scenarioController;
         [SerializeField] private string targetId;
 
+        // Этот метод вешается в OnClick у Unity Button.
         public void Press()
         {
             if (scenarioController == null)
